@@ -1,3 +1,5 @@
+package learning1
+
 import org.apache.flink.api.scala.{AggregateDataSet, DataSet, ExecutionEnvironment, createTypeInformation}
 
 /**
@@ -21,7 +23,7 @@ object wordCount {
       .flatMap(_.split(" "))
       .map((_, 1))
       .groupBy(0) // 0指的是以二元组中第一个元素作为key分组
-      .sum(1)  // 聚合二元组中第二个元素的值
+      .sum(1) // 聚合二元组中第二个元素的值
 
     resultDataSet.print()
 
