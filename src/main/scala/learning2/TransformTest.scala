@@ -1,6 +1,6 @@
 package learning2
 
-import org.apache.flink.api.common.functions.ReduceFunction
+import org.apache.flink.api.common.functions.{FilterFunction, MapFunction, ReduceFunction, RichMapFunction}
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.scala._
 
@@ -23,6 +23,7 @@ object TransformTest {
     // keyBy/min 可以传入位置，也可以传入字段名
     val aggStream = dataStream.keyBy("id")
       .minBy("temperature")
+//      .filter(new MyFilter)
 
 //    aggStream.print()
 
@@ -54,4 +55,22 @@ class  MyReduceFunction extends ReduceFunction[SensorReading] {
   override def reduce(t: SensorReading, t1: SensorReading): SensorReading = {
     SensorReading(t.id, t1.timeStamp, t.temperature.min(t1.temperature))
   }
+}
+
+// 自定义函数
+class MyFilter extends FilterFunction[SensorReading]{
+  override def filter(t: SensorReading): Boolean = {
+    t.id.startsWith("sensor_1")
+  }
+}
+
+// Mapper
+class MyMapper extends MapFunction[SensorReading, String] {
+  override def map(value: SensorReading): String = value.id + " temperature"
+}
+
+
+// Mapper RichFunction, 可以获取运行时候的上下文，以及生命周期
+class MyRichMapper extends RichMapFunction[SensorReading, String] {
+  override def map(value: SensorReading): String = value.id + " temperature"
 }
