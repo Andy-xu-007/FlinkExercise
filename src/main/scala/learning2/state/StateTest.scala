@@ -26,6 +26,7 @@ object StateTest {
         SensorReading(arr(0), arr(1).toLong, arr(2).toDouble)
       }
     )
+//      .uid("1") // save point 指定的uid
 
     env.execute("state test")
   }
