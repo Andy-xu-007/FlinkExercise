@@ -62,8 +62,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.23
-            </version>
+            <version>8.0.23</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-statebackend-rocksdb -->
         <dependency>
@@ -71,19 +70,34 @@
             <artifactId>flink-statebackend-rocksdb_2.12</artifactId>
             <version>1.12.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-statebackend-rocksdb -->
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-planner -->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-statebackend-rocksdb_2.12</artifactId>
+            <artifactId>flink-table-planner-blink_2.12</artifactId>
             <version>1.12.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-api-scala-bridge -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-api-scala-bridge_2.12</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-table-common -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-common</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-csv</artifactId>
+            <version>1.12.1</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.14.1</version>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -1,7 +1,0 @@
-hello world
-hello scala
-hello andy
-hello java
-how are you
-fine thank you
-and you
