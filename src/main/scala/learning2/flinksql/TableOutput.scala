@@ -39,7 +39,7 @@ object TableOutput {
     // 3.2 聚合算子
     val aggTable = seneorTable
       .groupBy($"id")
-      .select($"id", $"id".count() as $"count")
+//      .select($"id", $"id".count as $"count")
 
     // 4, 输出到文件
 
